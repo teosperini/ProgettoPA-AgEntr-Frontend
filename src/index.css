@@ -1,0 +1,70 @@
+:root {
+  --pa-blue: #0066CC;
+  --pa-blue-dark: #0055aa;
+  --pa-white: #ffffff;
+  --pa-danger: #d93644; /* Rosso istituzionale per il Logout */
+  
+  --pa-border-radius: 4px; 
+  /* Usiamo rem per l'altezza: 1rem è solitamente 16px */
+  --pa-btn-height: 3.375rem; /* ~54px proporzionale */
+  --pa-font-size: 1.1rem; 
+}
+
+.btn-pa {
+  border-radius: var(--pa-border-radius) !important;
+  height: var(--pa-btn-height);
+  display: inline-flex;
+  align-items: center;     /* Dinamico: centra verticalmente qualsiasi contenuto */
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--pa-font-size);
+  transition: all 0.2s ease-in-out;
+  border: none;
+  text-decoration: none;
+  min-width: 16.25rem;     /* ~260px ma flessibile */
+  width: fit-content;
+  padding: 0 1.5rem;       /* Padding laterale per non far toccare il testo ai bordi */
+}
+
+/* HEADER BUTTONS: Qui forziamo la coerenza dinamica */
+.btn-header {
+  /* Usiamo un'altezza relativa per l'header */
+  height: 2.5rem !important; /* ~40px proporzionale */
+  min-width: auto !important; 
+  font-size: 0.9rem !important;
+  padding: 0 1.25rem !important;
+  white-space: nowrap;      /* Evita che il testo vada a capo rompendosi */
+}
+
+.btn-pa-primary {
+  background-color: var(--pa-blue);
+  color: var(--pa-white) !important;
+}
+
+.btn-pa-light {
+  background-color: var(--pa-white);
+  color: var(--pa-blue) !important;
+}
+
+/* Il tasto rosso erediterà l'altezza di .btn-header */
+.btn-danger-pa {
+  background-color: var(--pa-danger);
+  color: var(--pa-white) !important;
+}
+
+/* Barra verticale: spessore in rem per scalabilità */
+.pa-btn-separator {
+  width: 0.0625rem; /* Corrisponde a 1px ma scala con il root font */
+  height: 70%; 
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* Contenitore icona: larghezza in rem per restare proporzionata al tasto */
+.pa-btn-icon-container {
+  width: 3.75rem; /* ~60px convertito in unità relativa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Si adatta dinamicamente all'altezza del genitore */
+}
